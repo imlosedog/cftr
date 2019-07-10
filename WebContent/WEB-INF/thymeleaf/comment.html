@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+
+	<link rel="stylesheet" href="../css/comment.css" type="text/css" />
+	</head>
+	<body>
+
+　<div class="clearfix" >  
+<!--  评论和点赞在一行，这是由于点赞和反对做了一个浮动，而评论又在正常文档中，导致它的浮动没有清除；清除浮动在bootstrap里边加个clearfix-->
+　　　　<div id=“div_digg...”>
+　　</div>
+    <div class="comments" style="border: 1px solid">
+        <p>发表评论</p>
+        <p>昵称：<input type="text" id="tbCommentAuthor" class="author" disabled="disabled" size="50" value="test"></p>
+        <p>评论内容:</p>
+        <textarea name="" id="comment_content" cols="60" rows="10"></textarea>  
+     
+        <p>
+            <button class="btn btn-default commment_btn">提交评论</button>  
+        </p>
+    </div>	
+	</div>
+	</body>
+
+</html>

@@ -1,0 +1,329 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>国家级自贸区用户登录</title>
+<link href="css/login.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/jQuery1.7.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+<script type="text/javascript" src="js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var $tab_li = $('#tab ul li');
+	$tab_li.hover(function(){
+		$(this).addClass('selected').siblings().removeClass('selected');
+		var index = $tab_li.index(this);
+		$('div.tab_box > div').eq(index).show().siblings().hide();
+	});	
+});
+</script>
+<script type="text/javascript">
+$(function(){
+/*登录信息验证*/
+$("#out_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入用户名'){
+ $(this).val('');
+ }
+});
+$("#out_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入用户名');
+ }
+});
+$("#out_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入密码'){
+ $(this).val('');
+ }
+});
+$("#out_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入密码');
+ }
+});
+$("#out_code_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入验证码'){
+ $(this).val('');
+ }
+});
+$("#out_code_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入验证码');
+ }
+});
+$(".out_login_error").Validform({
+	tiptype:function(msg,o,cssctl){
+		var objtip=$(".out_error_box");
+		cssctl(objtip,o.type);
+		objtip.text(msg);
+	},
+	ajaxPost:true
+});
+/*登录信息验证*/
+$("#in_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入用户名'){
+ $(this).val('');
+ }
+});
+$("#in_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入用户名');
+ }
+});
+$("#in_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入密码'){
+ $(this).val('');
+ }
+});
+$("#in_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入密码');
+ }
+});
+$("#in_code_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入验证码'){
+ $(this).val('');
+ }
+});
+$("#in_code_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入验证码');
+ }
+});
+$(".in_login_error").Validform({
+	tiptype:function(msg,o,cssctl){
+		var objtip=$(".in_error_box");
+		cssctl(objtip,o.type);
+		objtip.text(msg);
+	},
+	ajaxPost:true
+});
+/*注册信息验证*/
+$("#sec_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入用户名'){
+ $(this).val('');
+ }
+});
+$("#sec_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入用户名');
+ }
+});
+$("#sec_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入密码'){
+ $(this).val('');
+ }
+});
+$("#sec_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入密码');
+ }
+});
+$("#sec_name_hide").focus(function(){
+	 var name = $(this).val();
+	 if(name=='输入姓名'){
+	 $(this).val('');
+	 }
+	});
+	$("#sec_name_hide").focusout(function(){
+	 var name = $(this).val();
+	 if(name==''){
+	 $(this).val('输入姓名');
+	 }
+	});
+$("#sec_dep_hide").focus(function(){
+	var dep = $(this).val();
+	if(dep=='输入工作单位'){
+	 $(this).val('');
+}
+		});
+$("#sec_dep_hide").focusout(function(){
+		 var dep = $(this).val();
+		 if(dep==''){
+		 $(this).val('输入工作单位');
+		 }
+});
+$("#sec_tele_hide").focus(function(){
+		var tele = $(this).val();
+		if(tele=='输入手机号码'){
+		$(this).val('');
+		 }
+});
+$("#sec_tele_hide").focusout(function(){
+			 var tele = $(this).val();
+			 if(tele==''){
+			 $(this).val('输入手机号码');
+			 }
+			});
+$(".sec_login_error").Validform({
+	tiptype:function(msg,o,cssctl){
+		var objtip=$(".sec_error_box");
+		cssctl(objtip,o.type);
+		objtip.text(msg);
+	},
+	ajaxPost:true
+});
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	$(".screenbg ul li").each(function(){
+		$(this).css("opacity","0");
+	});
+	$(".screenbg ul li:first").css("opacity","1");
+	var index = 0;
+	var t;
+	var li = $(".screenbg ul li");	
+	var number = li.size();
+	function change(index){
+		li.css("visibility","visible");
+		li.eq(index).siblings().animate({opacity:0},8000);
+		li.eq(index).animate({opacity:1},8000);
+	}
+	function show(){
+		index = index + 1;
+		if(index<=number-1){
+			change(index);
+		}else{
+			index = 0;
+			change(index);
+		}
+	}
+	t = setInterval(show,8000);
+	//根据窗口宽度生成图片宽度
+	var width = $(window).width();
+	$(".screenbg ul img").css("width",width+"px");
+});
+</script>
+</head>
+<body>
+<div id="tab">
+  <ul class="tab_menu">
+    <li class="selected">外部用户登录</li>
+    <li>内部用户登录</li>
+    <li>用户注册</li>
+  </ul>
+  <div class="tab_box"> 
+    <!-- 外部登录开始 -->
+    <div>
+      <div class="out_error_box"></div>
+      <form action="" method="post" class="out_login_error">
+        <div id="username">
+          <label>用户名：</label>
+          <input type="text" id="out_username_hide" name="username" value="输入用户名" nullmsg="用户名不能为空！" datatype="s6-18" errormsg="学号范围在6~18个字符之间！" sucmsg="学号验证通过！"/>
+          <!--ajaxurl="demo/valid.jsp"--> 
+        </div>
+        <div id="password">
+          <label>密&nbsp;&nbsp;&nbsp;码：</label>
+          <input type="password" id="out_password_hide" name="password" value="输入密码" nullmsg="密码不能为空！" datatype="*6-16" errormsg="密码范围在6~16位之间！" sucmsg="密码验证通过！"/>
+        </div>
+<!--         <div id="code"> -->
+<!--           <label>验证码：</label> -->
+<!--           <input type="text" id="out_code_hide" name="code"  value="输入验证码" nullmsg="验证码不能为空！" datatype="*4-4" errormsg="验证码有4位数！" sucmsg="验证码验证通过！"/> -->
+<!--           <img src="images/captcha.jpg" title="点击更换" alt="验证码占位图"/> </div> -->
+        <div id="remember">
+          <input type="checkbox" name="remember">
+          <label>记住密码</label>
+        </div>
+        <div id="login">
+          <button type="submit" name="register" value ="登录" onclick="window.location.href='index.jsp'"> 登录</button>
+        </div>
+      </form>
+    </div>
+   <!-- 外部登录结束-->
+   <!-- 内部登录开始-->
+    <div class="hide">
+     <div class="in_error_box"></div>
+      <form action="" method="post" class="in_login_error">
+        <div id="username">
+          <label>用户名：</label>
+          <input type="text" id="in_username_hide" name="username" value="输入用户名" nullmsg="用户名不能为空！" datatype="s6-18" errormsg="教工号范围在6~18个字符之间！" sucmsg="教工号验证通过！"/>
+          <!--ajaxurl="demo/valid.jsp"--> 
+        </div>
+        <div id="password">
+          <label>密&nbsp;&nbsp;&nbsp;码：</label>
+          <input type="password" id="in_password_hide" name="password" value="输入密码" nullmsg="密码不能为空！" datatype="*6-16" errormsg="密码范围在6~16位之间！" sucmsg="密码验证通过！"/>
+        </div>
+<!--         <div id="code"> -->
+<!--           <label>验证码：</label> -->
+<!--           <input type="text" id="in_code_hide" name="code"  value="输入验证码" nullmsg="验证码不能为空！" datatype="*4-4" errormsg="验证码有4位数！" sucmsg="验证码验证通过！"/> -->
+<!--           <img src="images/captcha.jpg" title="点击更换" alt="验证码占位图"/> </div> -->
+        <div id="remember">
+          <input type="checkbox" name="remember">
+          <label>记住密码</label>
+        </div>
+        <div id="login">
+          <button type="submit">登录</button>
+        </div>
+      </form>
+    </div>
+     <!-- 内部登录结束-->
+     <!-- 注册开始-->
+    <div class="hide">
+    <div class="sec_error_box"></div>
+      <form action="" method="post" class="sec_login_error">
+        <div id="username">
+          <label>用&nbsp;户&nbsp;名：</label>
+          <input type="text" id="sec_username_hide" name="username" value="输入用户名" nullmsg="用户名不能为空！" datatype="s6-18" errormsg="用户名范围在6~18个字符之间！" sucmsg="用户名验证通过！"/>
+          <!--ajaxurl="demo/valid.jsp"--> 
+        </div>
+        <div id="password">
+          <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+          <input type="password" id="sec_password_hide" name="password" value="输入密码" nullmsg="密码不能为空！" datatype="*6-16" errormsg="密码范围在6~16位之间！" sucmsg="密码验证通过！"/>
+        <div id="name">
+          <label>真实姓名：</label>
+          <input type="text" id="sec_name_hide" name="name" value="输入姓名" nullmsg="姓名不能为空！" datatype="*6-16" errormsg="范围在6~16位之间！" sucmsg="姓名验证通过！"/>
+        </div>
+        <div id="department">
+          <label>工作单位：</label>
+          <input type="text" id="sec_dep_hide" name="department" value="输入工作单位" nullmsg="工作单位不能为空！" datatype="*6-16" errormsg="范围在6~16位之间！" sucmsg="工作单位验证通过！"/>
+        </div>
+        <div id="tele">
+          <label>手机号码：</label>
+          <input type="text" id="sec_tele_hide" name="tele" value="输入手机号码" nullmsg="手机号码不能为空！" datatype="*6-16" errormsg="范围在6~16位之间！" sucmsg="手机号码验证通过！"/>
+        </div>
+<!--         <div id="code"> -->
+<!--           <label>验证码：</label> -->
+<!--           <input type="text" id="sec_code_hide" name="code"  value="输入验证码" nullmsg="验证码不能为空！" datatype="*4-4" errormsg="验证码有4位数！" sucmsg="验证码验证通过！"/> -->
+<!--           <img src="images/captcha.jpg" title="点击更换" alt="验证码占位图"/> </div> -->
+<!--         <div id="remember"> -->
+<!--           <input type="checkbox" name="remember"> -->
+<!--           <label>记住密码</label> -->
+<!--         </div> -->
+        <div id="login">
+          <button type="submit">注册</button>
+        </div>
+      </form>
+    </div>
+     <!-- 注册结束-->
+  </div>
+</div>
+
+<div class="bottom"></div>
+<div class="screenbg">
+  <ul>
+    <li><a href="javascript:;"><img src="images/3.jpg"></a></li>
+
+
+  </ul>
+</div>
+</body>
+</html>
